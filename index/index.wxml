@@ -1,0 +1,5 @@
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档
+
+ <!-- filterSelectItemList 绑定的时间回调接收函数、isShowSelectTitle 是否显示选择item而不是类别名称 -->
+ <component-filter bind:filterSelectItemList="filterSelectItemList" :isShowSelectTitle="false"></component-filter>
+</view>

@@ -1,0 +1,34 @@
+<view class="wrapper">
+    <view class="model-box-bg" catchtouchmove="true" wx:if="{{isOpenList}}"></view>
+    <view class="filter-box" catchtouchmove="true">
+      <!-- title分类选择 -->
+      <view class="category-bg">
+        <view class="category-btn {{(index != 0) ? 'category-btn-border' : ''}} {{(selectColumn == index && isOpenList) ? 'select' : ''}}" wx:for="{{filters}}" catchtap="categoryBtnClick" data-index="{{index}}">{{isShowSelectTitle == false ? item.title : titleList[index]}}
+          <image class="arrow {{(selectColumn == index && isOpenList) ? 'select' : ''}}" src="{{(selectColumn == index && isOpenList) ? 'arrow_up.png' : 'arrow_down.png'}}" ></image>
+        </view>
+      </view>
+    </view>
+    <!-- 选择列表 -->
+    <view class="list-bg" wx:if="{{isOpenList}}">
+      <!-- 第一列表 -->
+      <view class="list list-first" wx:if="{{(selectColumn == 0) ? true : false}}">
+        <view class="item-bg {{index == firstIndex ? 'item-bg-select' : ''}}" wx:for="{{firstList}}" catchtap="cellSelect" data-group="{{selectColumn}}" data-index="{{index}}">
+          <view class="item-text {{index == firstIndex ? 'item-text-select' : ''}}">{{item.title}}</view>
+        </view>
+      </view>
+      <!-- 第二列表 -->
+      <view class="list list-second" >
+        <view class="item-bg {{index == secondIndex ? 'item-bg-select' : ''}}" wx:for="{{secondList}}" catchtap="cellSelect" data-group="{{1}}" data-index="{{index}}">
+          <view class="item-text {{index == secondIndex ? 'item-text-select' : ''}}">{{item.title}}</view>
+        </view>
+        
+      </view>
+      <!-- 第三列表 -->
+      <view class="list list-last" wx:if="{{(selectColumn == 0) ? true : false}}">
+        <view class="item-bg {{index == thirdIndex ? 'item-bg-select' : ''}}" wx:for="{{thirdList}}" catchtap="cellSelect" data-group="{{2}}" data-index="{{index}}">
+          <view class="item-text {{index == thirdIndex ? 'item-text-select' : ''}}">{{item.title}}</view>
+        </view>
+        
+      </view>
+    </view>
+</view>
