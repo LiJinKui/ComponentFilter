@@ -1,6 +1,6 @@
 <view class="wrapper">
     <view class="model-box-bg" catchtouchmove="true" wx:if="{{isOpenList}}"></view>
-    <view class="filter-box" catchtouchmove="true">
+    <view class="filter-box" catchtouchmove="true" style="top:{{topHeight}}rpx">
       <!-- title分类选择 -->
       <view class="category-bg">
         <view class="category-btn {{(index != 0) ? 'category-btn-border' : ''}} {{(selectColumn == index && isOpenList) ? 'select' : ''}}" wx:for="{{filters}}" catchtap="categoryBtnClick" data-index="{{index}}">{{isShowSelectTitle == false ? item.title : titleList[index]}}
@@ -9,7 +9,7 @@
       </view>
     </view>
     <!-- 选择列表 -->
-    <view class="list-bg" wx:if="{{isOpenList}}">
+    <view class="list-bg" wx:if="{{isOpenList}}" style="top:{{topHeight + 82}}rpx">
       <!-- 第一列表 -->
       <view class="list list-first" wx:if="{{(selectColumn == 0) ? true : false}}">
         <view class="item-bg {{index == firstIndex ? 'item-bg-select' : ''}}" wx:for="{{firstList}}" catchtap="cellSelect" data-group="{{selectColumn}}" data-index="{{index}}">

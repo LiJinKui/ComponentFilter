@@ -7,6 +7,10 @@ Component({
       type: Boolean,
       value: false
     },
+    topHeight: {
+      type: Number,
+      value: 0
+    },
     filters: {
       type: Array,
       value: [

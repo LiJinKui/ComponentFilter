@@ -17,7 +17,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
 	"appid": "touristappid",
-	"projectname": "Filter",
+	"projectname": "ComponentFilter",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
